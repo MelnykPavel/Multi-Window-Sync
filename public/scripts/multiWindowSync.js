@@ -153,7 +153,7 @@ bcLife.onmessage = (ev) => {
 // WINDOW EVENTS
 // =========================
 
-window.addEventListener("resize", rawLines);
+window.addEventListener("resize", drawLines);
 
 window.addEventListener("beforeunload", () => {
   bcLife.postMessage({ type: "left", id });
