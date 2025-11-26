@@ -1,0 +1,48 @@
+<button onclick="window.open('/', '_blank');" class="circle-plus"></button>
+
+<style>
+  .circle-plus {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #347e37;
+    border: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    opacity: 30%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    transition:
+      background-color 0.2s,
+      transform 0.2s;
+  }
+
+  .circle-plus::before,
+  .circle-plus::after {
+    content: "";
+    position: absolute;
+    background-color: white;
+    border-radius: 2px;
+  }
+
+  .circle-plus::before {
+    width: 3px;
+    height: 15px;
+  }
+
+  .circle-plus::after {
+    width: 15px;
+    height: 3px;
+  }
+
+  .circle-plus:hover {
+    opacity: 100%;
+    transform: scale(1.1);
+  }
+</style>

@@ -1,0 +1,69 @@
+---
+import Button from "./Button.astro";
+---
+
+<div id="container">
+  <Button />
+  <main>
+    <svg id="stage" viewBox="0 0 100 100" preserveAspectRatio="none">
+      <g id="lines"></g>
+    </svg>
+    <video class="video-back" src="back.mp4" autoplay muted loop playsinline
+    ></video>
+    <video class="video-main" src="main.mp4" autoplay muted loop playsinline
+    ></video>
+  </main>
+</div>
+<script is:inline src="/scripts/multiWindowSync.js"></script>
+<style is:global>
+  svg {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+  }
+  button {
+    position: relative;
+    cursor: pointer;
+    z-index: 2;
+  }
+  .line {
+    stroke: white;
+    stroke-width: 1;
+    stroke-linecap: round;
+  }
+
+  .glow {
+    stroke: white;
+    stroke-width: 3;
+    filter: blur(0.5px);
+    opacity: 0.8;
+    transition: opacity 0.2s ease;
+    animation: pulse 1.5s ease infinite;
+  }
+
+  video {
+    position: fixed;
+    inset: 0;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+  .video-main {
+    mix-blend-mode: lighten;
+  }
+  .video-back {
+    mix-blend-mode: screen;
+  }
+  @keyframes pulse {
+    0% {
+      opacity: 0.5;
+    }
+    50% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.5;
+    }
+  }
+</style>
