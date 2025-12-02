@@ -1,8 +1,79 @@
 ---
-import VideoStage from "../components/VideoStage.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout>
-  <VideoStage />
+  <section class="wrapper">
+    <div class="instructions">
+      <h1>Instructions</h1>
+
+      <p>
+        This page displays connection lines between all open browser windows. To
+        add a new connection, click the round “plus” button in the bottom-right
+        corner. A new tab with the <code>/video</code> page will open. Move this
+        tab into a separate browser window — only then the connection lines between
+        windows will display correctly.
+      </p>
+
+      <p class="desktop-note">Note: this feature works on desktop only.</p>
+
+      <h2>Quick Actions</h2>
+      <ul>
+        <li>Start: open <a href="/video">/video</a></li>
+        <li>Add a new tab: click the “plus” button</li>
+        <li>After opening the tab: drag it into a separate window</li>
+      </ul>
+    </div>
+  </section>
 </Layout>
+
+<style>
+  .wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 16px;
+    box-sizing: border-box;
+  }
+
+  .instructions {
+    max-width: 600px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(6px);
+    text-align: center;
+  }
+
+  .instructions h1 {
+    font-size: 1.6rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .instructions h2 {
+    font-size: 1.2rem;
+    margin-top: 1.6rem;
+  }
+
+  .instructions p {
+    line-height: 1.55;
+  }
+
+  .instructions ul {
+    margin-top: 0.6rem;
+    padding-left: 20px;
+    text-align: left;
+  }
+
+  .instructions a {
+    text-decoration: underline;
+  }
+
+  .desktop-note {
+    color: #ffd966;
+    margin-top: 1rem;
+    font-weight: 500;
+  }
+</style>
